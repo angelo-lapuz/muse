@@ -19,6 +19,21 @@ class database {
         ]);
     }
 
+    function logInQuery() {
+        $dynamodb = $sdk->createDynamoDb();
+        $marshaler = new Marshaler();
+
+        $tableName = 'login';
+
+        $eav = $marshaler->marshalJson('
+    {
+        ":yyyy":1992,
+        ":letter1": "A",
+        ":letter2": "L"
+    }
+');
+    }
+
     function createTable() {
         $dynamodb = $this->sdk->createDynamoDb();
 

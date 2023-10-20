@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once ("post_validation.php");
+require_once("postValidation.php");
 if (isset($_SESSION['user'])) {
     header("Location: index.php");
 }
@@ -18,7 +18,7 @@ if (isset($_SESSION['user'])) {
 <body>
     <main>
         <div id="login-form-container">
-            <form action="post_validation.php" method="post" onsubmit="return checkForBlankFields('email','password')">
+            <form action="postValidation.php" method="post" onsubmit="return checkForBlankFields('email','password')">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email">
                 <span id="emailErrorSpan"></span>
