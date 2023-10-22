@@ -7,7 +7,7 @@ date_default_timezone_set('UTC');
 use Aws\DynamoDb\Exception\DynamoDbException;
 use Aws\DynamoDb\Marshaler;
 
-class database {
+class DatabaseQuery {
     private $sdk;
 
     function __construct() {
@@ -20,18 +20,25 @@ class database {
     }
 
     function logInQuery() {
-        $dynamodb = $sdk->createDynamoDb();
-        $marshaler = new Marshaler();
-
+        $dynamodb = $this->sdk->createDynamoDb();
         $tableName = 'login';
 
-        $eav = $marshaler->marshalJson('
-    {
-        ":yyyy":1992,
-        ":letter1": "A",
-        ":letter2": "L"
-    }
-');
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        $params = [
+            'TableName' => $tableName,
+            'Key' => [
+                'email' => [
+                    'S' => $email,
+                ],
+                'password' => [
+                    'S' => $password,
+                ],
+            ],
+        ];
+        return $dynamodb->getItem($params);
+
     }
 
     function createTable() {

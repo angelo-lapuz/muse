@@ -28,7 +28,7 @@ function createTheBucket()
         'version' => 'latest'
     ]);
 
-    echo createBucket($s3Client, 's3914378-a2-bucket');
+    echo createBucket($s3Client, 's3914378-assignment2-bucket');
 }
 
 // Uncomment the following line to run this code in an AWS account.

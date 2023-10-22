@@ -1,18 +1,24 @@
 <?php
-    session_start();
+session_start();
+
+
+//print_r(@parse_url($_SERVER['REQUEST_URI']));
+switch (@parse_url($_SERVER['REQUEST_URI'])['path']) {
+    case '/':
+        require 'log_in.php';
+        break;
+    case '/log_in':
+        require 'log_in.php';
+        break;
+    case '/main':
+        require 'main.php';
+        break;
+    case '/postValidation':
+        require 'postValidation.php';
+        break;
+    default:
+        http_response_code(404);
+        exit('Not Found');
+}
+
 ?>
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Muse</title>
-</head>
-<body>
-    <main>
-        <form
-    </main>
-</body>
-</html>

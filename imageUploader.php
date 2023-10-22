@@ -37,7 +37,7 @@ foreach ($songs as $song) {
 
 foreach ($songs as $song) {
     foreach ($song as $value) {
-        $bucket = 's3914378-a2-bucket';
+        $bucket = 's3914378-assignment2-bucket';
         $url = $value['img_url'];
         $splitString = explode("/",$url);
         $keyName = end($splitString);
