@@ -1,7 +1,7 @@
 <?php
-
+session_start();
 //require("index.php");
-require_once("postValidation.php");
+//require_once("postValidation.php");
 $errorMessage = "";
 //print_r($_SESSION['user']);
 //print_r(@parse_url($_SERVER['REQUEST_URI'])['path']);
@@ -34,7 +34,7 @@ if (isset($_SESSION['errors'])) {
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password">
                 <span id="passwordErrorSpan"></span>
-                <input type="submit" value="Login">
+                <input type="submit" name="submit-type" value="Login">
             </form>
             <span id="loginErrorMessage"><?php echo $errorMessage;?></span>
         </div>

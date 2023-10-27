@@ -21,7 +21,7 @@ $params = [
             'KeyType' => 'HASH'  //Partition key
         ],
         [
-            'AttributeName' => 'year',
+            'AttributeName' => 'artist',
             'KeyType' => 'RANGE'  //Sort key
         ]
     ],
@@ -31,7 +31,7 @@ $params = [
             'AttributeType' => 'S'
         ],
         [
-            'AttributeName' => 'year',
+            'AttributeName' => 'artist',
             'AttributeType' => 'S'
         ],
 
