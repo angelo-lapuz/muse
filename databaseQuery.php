@@ -123,7 +123,7 @@ class DatabaseQuery {
 
 
             $s3 = new S3Client([
-                'profile' => 'default',
+//                'profile' => 'default',
                 'region' => 'us-east-1',
                 'version' => 'latest',
             ]);
