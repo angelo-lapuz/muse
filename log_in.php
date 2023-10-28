@@ -22,19 +22,21 @@ if (isset($_SESSION['errors'])) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src='./script.js'></script>
+    <link rel="stylesheet" href="src/style.css">
     <title>Log In</title>
 </head>
-<body>
-    <main>
+<body id="login-body">
+    <main id="login-main">
         <div id="login-form-container">
-            <form action="postValidation" method="post" onsubmit="return checkForBlankFields('email','password')">
+            <form action="postValidation" method="post" onsubmit="return checkForBlankFields('email','password')" id="login-form">
                 <label for="email">Email:</label>
-                <input type="text" id="email" name="email">
+                <input type="email" id="email" name="email">
                 <span id="emailErrorSpan"></span>
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password">
                 <span id="passwordErrorSpan"></span>
                 <input type="submit" name="submit-type" value="Login">
+                <a href="register" id="register-button">Register</a>
             </form>
             <span id="loginErrorMessage"><?php echo $errorMessage;?></span>
         </div>

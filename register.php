@@ -19,11 +19,11 @@ if (isset($_SESSION['errors'])) {
     <link rel="stylesheet" href="src/style.css">
     <title>Register</title>
 </head>
-<body>
+<body id="register-body">
     <section id="register-container">
-        <form action="postValidation" method="post" onsubmit="return checkForBlankRegister('register-email','register-user-name','register-password')">
+        <form action="postValidation" method="post" onsubmit="return checkForBlankRegister('register-email','register-user-name','register-password')" id="register-form">
             <label for="register-email">Email:</label>
-            <input type="text" id="register-email" name="register_email">
+            <input type="email" id="register-email" name="register_email">
             <span id="register-emailErrorSpan"></span>
             <label for="register-user-name">Username:</label>
             <input type="text" id="register-user-name" name="register_username">
@@ -32,6 +32,7 @@ if (isset($_SESSION['errors'])) {
             <input type="password" id="register-password" name="register_password">
             <span id="register-passwordErrorSpan"></span>
             <input type="submit" name="submit-type" value="Register">
+            <a href="log_in" id="log-out-button">Cancel</a>
         </form>
         <span id="registerErrorMessage"><?php echo $errorMessage;?></span>
     </section>
